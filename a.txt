@@ -1,0 +1,20 @@
+Minifying 2 /home/abc/XK/dataset/coffee_martini
+mogrify -resize 50.0% -format png *.jpg
+/bin/sh: 1: mogrify: not found
+Traceback (most recent call last):
+  File "train.py", line 776, in <module>
+    reconstruction(args)
+  File "train.py", line 225, in reconstruction
+    train_dataset = dataset(args.datadir, split='train', downsample=args.downsample_train, is_stack=False,
+  File "/home/abc/XK/mixvoxels/dataLoader/llff_video.py", line 294, in __init__
+    self.read_meta()
+  File "/home/abc/XK/mixvoxels/dataLoader/llff_video.py", line 317, in read_meta
+    _minify(self.root_dir, factors=[int(self.downsample), ])
+  File "/home/abc/XK/mixvoxels/dataLoader/llff_video.py", line 60, in _minify
+    check_output(args, shell=True)
+  File "/home/abc/anaconda3/envs/xukai/lib/python3.8/subprocess.py", line 415, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/home/abc/anaconda3/envs/xukai/lib/python3.8/subprocess.py", line 516, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'mogrify -resize 50.0% -format png *.jpg' returned non-zero exit status 127.
+
